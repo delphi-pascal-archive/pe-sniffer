@@ -1,0 +1,304 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+101 DIALOGEX 0, 0, 281, 138
+STYLE DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "PE Sniffer v0.1"
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        10,7,10,216,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Browse...",1,226,8,50,14,0,WS_EX_STATICEDGE
+    EDITTEXT        20,7,35,205,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    GROUPBOX        "PE File:",-1,2,0,278,25,WS_TABSTOP
+    GROUPBOX        "Information",-1,2,26,217,74,WS_TABSTOP
+    GROUPBOX        "Database Information",-1,2,100,133,22,WS_TABSTOP
+    LTEXT           "Total signatures in database:",-1,8,110,95,8,WS_TABSTOP
+    LTEXT           "Last Update:",-1,187,110,42,8,WS_TABSTOP
+    LTEXT           "0",201,106,110,25,8,WS_TABSTOP
+    LTEXT           "00/00/0000",202,234,110,38,8,WS_TABSTOP
+    GROUPBOX        "",-1,134,100,146,22,WS_TABSTOP
+    LTEXT           "Linker Info:",-1,11,50,38,8,WS_TABSTOP
+    LTEXT           "SubSystem:",-1,115,50,39,8,WS_TABSTOP
+    EDITTEXT        21,56,50,51,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        24,159,50,53,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Header",3,222,30,58,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Directories",4,222,46,58,14,0,WS_EX_STATICEDGE
+    LTEXT           "EntryPoint:",-1,11,64,37,8,WS_TABSTOP
+    LTEXT           "First Bytes:",-1,117,64,38,8,WS_TABSTOP
+    EDITTEXT        22,56,64,51,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        25,159,64,53,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    LTEXT           "File Offset:",-1,12,78,37,8,WS_TABSTOP
+    LTEXT           "EP Section:",-1,117,78,37,8,WS_TABSTOP
+    EDITTEXT        23,56,78,51,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        26,159,78,53,10,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Plugins->",7,222,85,58,15,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Sections",5,222,62,58,15,0,WS_EX_STATICEDGE
+    CONTROL         "",-1,"Static",SS_ETCHEDHORZ,225,80,52,1
+END
+
+102 DIALOGEX 1, 65525, 276, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Header Information"
+FONT 8, "Tahoma"
+BEGIN
+    PUSHBUTTON      "Close",2,220,140,50,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "Image Option Header Infomations [HEX]",-1,5,5,265,130,
+                    WS_TABSTOP
+    LTEXT           "EntryPoint:",-1,15,22,55,8
+    EDITTEXT        100,76,20,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        101,76,33,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        102,76,46,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        103,76,59,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        104,76,72,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        105,76,85,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        106,76,98,50,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        107,76,111,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        112,212,20,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        113,212,33,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        114,212,46,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        115,212,59,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        116,212,72,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        117,212,85,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        118,212,98,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        119,212,111,50,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    LTEXT           "ImageBase:",-1,15,35,55,8
+    LTEXT           "SizeOfImage:",-1,15,48,55,8
+    LTEXT           "BaseOfCode:",-1,15,61,55,8
+    LTEXT           "BaseOfData:",-1,15,74,55,8
+    LTEXT           "SectionAlignment:",-1,15,87,56,8
+    LTEXT           "FileAlignment:",-1,15,100,55,8
+    LTEXT           "Magic:",-1,15,113,55,8
+    LTEXT           "SubSytem:",-1,135,22,65,8
+    LTEXT           "NumberOfSections:",-1,135,35,65,8
+    LTEXT           "Time/DateStamp:",-1,135,48,65,8
+    LTEXT           "SizeOfHeaders:",-1,135,61,65,8
+    LTEXT           "Characteristics:",-1,135,74,65,8
+    LTEXT           "Checksum:",-1,135,86,65,8
+    LTEXT           "SizeOfOptionalHeader:",-1,135,99,75,8
+    LTEXT           "NumOfRvaAndSizes:",-1,135,113,65,8
+    CONTROL         "",-1,"Static",SS_ETCHEDFRAME,5,138,210,19
+    LTEXT           "Entry Point (RAW):",-1,12,143,62,8
+    LTEXT           "",1000,76,143,134,10,0,WS_EX_STATICEDGE
+END
+
+103 DIALOGEX 40, 65521, 210, 258
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Directory Inforamtion"
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        100,101,22,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        200,150,22,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        101,101,35,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        201,150,35,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        102,101,48,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        202,150,48,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        103,101,61,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        203,150,61,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        104,101,74,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        204,150,74,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        105,101,87,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        205,150,87,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        106,101,100,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        206,150,100,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        107,101,114,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        207,150,114,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        108,101,127,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        208,150,127,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        109,101,140,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        209,150,140,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        110,101,153,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        210,150,153,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        111,101,166,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        211,150,166,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        112,101,179,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        212,150,179,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        113,101,192,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        213,150,192,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        114,101,205,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        214,150,205,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        115,101,218,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        215,150,218,49,12,ES_CENTER | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Close",2,155,240,50,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "PE Directory Informations [HEX]",-1,6,3,199,232,
+                    WS_TABSTOP
+    LTEXT           "Export Directory",-1,12,23,83,8
+    LTEXT           "Import Directory",-1,12,36,83,8
+    LTEXT           "Resource Directory",-1,12,49,83,8
+    LTEXT           "Exception Directory",-1,12,62,83,8
+    LTEXT           "Security Directory",-1,12,75,83,8
+    LTEXT           "Base Relocation Table",-1,12,88,83,8
+    LTEXT           "Debug Directory",-1,12,101,83,8
+    LTEXT           "Architecture Specific Data",-1,12,115,84,8
+    LTEXT           "RVA of GP",-1,12,128,83,8
+    LTEXT           "TLS Directory",-1,11,141,84,8
+    LTEXT           "Load Config Directory",-1,12,155,83,8
+    LTEXT           "Bound Import Directory",-1,12,168,83,8
+    LTEXT           "Import Address Table",-1,12,180,83,8
+    LTEXT           "Delay Import Descriptors",-1,12,193,83,8
+    LTEXT           "COM Runtime descriptor",-1,12,206,83,8
+    LTEXT           "RVA",-1,119,13,14,8
+    LTEXT           "Size",-1,167,12,14,8
+    LTEXT           "Reserved",-1,12,219,83,8
+END
+
+105 DIALOGEX 30, 5, 212, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "Tahoma"
+BEGIN
+    PUSHBUTTON      "OK",2,157,115,50,14,0,WS_EX_STATICEDGE
+    CONTROL         101,-1,"Static",SS_BITMAP | SS_SUNKEN,5,5,168,32
+    GROUPBOX        "",-1,5,40,201,70,WS_TABSTOP
+    CTEXT           "www",-1,30,80,49,10,0,WS_EX_STATICEDGE
+    LTEXT           "http://my-soft.ucoz.ru",15,95,80,74,8
+    CTEXT           "mail",-1,30,90,49,10,0,WS_EX_STATICEDGE
+    LTEXT           "Write on pure Delphi (WinAPI)",-1,57,50,97,8
+    LTEXT           "]",-1,175,90,8,8
+    LTEXT           "]",-1,175,80,8,8
+    LTEXT           "[",-1,85,80,8,8
+    LTEXT           "[",-1,85,90,8,9
+    LTEXT           "©opyright (demix)® 2009-2010",-1,53,60,104,8
+    LTEXT           "Dima_yar@mail.ru",16,95,90,59,8
+END
+
+104 DIALOGEX 65511, 15, 332, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Sections Viewer"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "List1",100,"SysListView32",LVS_REPORT | LVS_SINGLESEL | 
+                    LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | LVS_NOSORTHEADER | 
+                    WS_TABSTOP,7,9,318,75,WS_EX_STATICEDGE
+    PUSHBUTTON      "Close",2,280,93,50,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "Sections Informations [HEX]",-1,2,0,328,89,WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+101                     BITMAP  DISCARDABLE     "bmp101.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+100 MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "New Scan",                    1
+        MENUITEM SEPARATOR
+        MENUITEM "&Save List...",               3
+        MENUITEM SEPARATOR
+        MENUITEM "&Close...",                   2
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Clear List",                  4
+    END
+    POPUP "&Action"
+    BEGIN
+        MENUITEM "Load Into PE Editor",         5
+        MENUITEM SEPARATOR
+        MENUITEM "&Stop...",                    6
+        MENUITEM SEPARATOR
+        MENUITEM "&Explorer...",                7
+    END
+END
